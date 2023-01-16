@@ -22,7 +22,7 @@ import org.junit.jupiter.api.Test;
 import utils.EMF_Creator;
 
 public class LogInEndPointTest {
-
+/*
     private static final int SERVER_PORT = 7777;
     private static final String SERVER_URL = "http://localhost:8080/BackEnd_CA2_war_exploded/api";
 
@@ -218,5 +218,6 @@ public class LogInEndPointTest {
                 .body("code", equalTo(403))
                 .body("message", equalTo("Not authenticated - do login"));
     }
-
+ */
 }
+

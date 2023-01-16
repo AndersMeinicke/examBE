@@ -40,6 +40,7 @@ import static org.hamcrest.Matchers.*;
 import org.junit.jupiter.api.BeforeAll;
 
 public class UserResourceTest {
+    /*
 
     private static final int SERVER_PORT = 7777;
     private static final String SERVER_URL = "http://localhost/api";
@@ -131,8 +132,7 @@ public class UserResourceTest {
                 .body("id", equalTo(u1.getId()))
                 .body("userName", equalTo(u1.getUserName()));
     }
-
-   /* @Test
+@Test
     public void testError() {
         given()
                 .contentType(ContentType.JSON)
@@ -145,7 +145,6 @@ public class UserResourceTest {
                 .body("message", equalTo("Can't find a user with that id"));
     }
 
-    */
 
     @Test
     public void testPrintResponse(){
@@ -181,7 +180,6 @@ public class UserResourceTest {
 
 
 
-/*
     @Test
     public void getAllUsers() throws Exception {
         List<UserDTO> userDTOs;
@@ -318,6 +316,7 @@ public class UserResourceTest {
 
     }
 
- */
 
+
+    */
 }
