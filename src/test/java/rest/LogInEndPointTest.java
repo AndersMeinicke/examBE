@@ -24,7 +24,7 @@ import utils.EMF_Creator;
 public class LogInEndPointTest {
 
     private static final int SERVER_PORT = 7777;
-    private static final String SERVER_URL = "http://localhost/api";
+    private static final String SERVER_URL = "http://localhost:8080/BackEnd_CA2_war_exploded/api";
 
     static final URI BASE_URI = UriBuilder.fromUri(SERVER_URL).port(SERVER_PORT).build();
     private static HttpServer httpServer;
@@ -110,7 +110,7 @@ public class LogInEndPointTest {
 
     @Test
     public void serverIsRunning() {
-        given().when().get("/info").then().statusCode(200);
+        given().when().get("/user/all").then().statusCode(200);
     }
 
     @Test
@@ -118,7 +118,7 @@ public class LogInEndPointTest {
         given()
                 .contentType("application/json")
                 .when()
-                .get("/info/").then()
+                .get("/user").then()
                 .statusCode(200)
                 .body("msg", equalTo("Hello anonymous"));
     }
@@ -143,7 +143,7 @@ public class LogInEndPointTest {
                 .contentType("application/json")
                 .header("x-access-token", securityToken)
                 .when()
-                .get("/info/user").then()
+                .get("/user").then()
                 .statusCode(200)
                 .body("msg", equalTo("Hello to User: user"));
     }
@@ -201,7 +201,7 @@ public class LogInEndPointTest {
         given()
                 .contentType("application/json")
                 .when()
-                .get("/info/user").then()
+                .get("/user/all").then()
                 .statusCode(403)
                 .body("code", equalTo(403))
                 .body("message", equalTo("Not authenticated - do login"));
@@ -213,7 +213,7 @@ public class LogInEndPointTest {
         given()
                 .contentType("application/json")
                 .when()
-                .get("/info/user").then()
+                .get("/user/all").then()
                 .statusCode(403)
                 .body("code", equalTo(403))
                 .body("message", equalTo("Not authenticated - do login"));
