@@ -15,9 +15,6 @@ import security.errorhandling.AuthenticationException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author lam@cphbusiness.dk
- */
 public class UserFacade {
     private static EntityManagerFactory emf;
     private static UserFacade instance;
